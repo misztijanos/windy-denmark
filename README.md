@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+WindyDenmark.com is a website that shows weather information about cities in Denmark. All the requirements below are a wishlist from the PO and you have to be pragmatic in choosing which things to implement and which to release later.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Every city is shown on a “city card”. A city card includes the following weather information:
+    City name
+    A weather icon
+    Forecast main name - such as “Partly cloudy”, “Sunny” etc
+    Temperature in degrees Celsius
+    Wind speed name - such as “Gentle Breeze”, “Strong Wind” etc
+    Wind speed
+    Wind direction (code)
+    Cloudiness in percentage
+    Additionally, the city card includes the possibility to add the city to a list of favourites (which sits at the top of the page) - see details below.
 
-## Available Scripts
+    The list of cities is shown using pagination. There is a “Load more” button to load the next batch of cities.
+    Data for displayed cities should be no more than 6 hours old.
+    You can sort the list of cities by:
+    Proximity - the closest city to my current location
+    Most windy right now - most windy in Denmark right now, by wind speed
+    Least windy right now - least windy in Denmark right now, by wind speed
+    You can add a city to favourites:
+    The Favourites list is pinned at the top of the screen - see wireframe
+    Behaviour:
+    Given that a city is not added to favorites,
+    When I click on the star at the upper right corner of a city card
+    Then I add it to my favourites list at the top of the page
+    Given that a city is in the favourites list,
+    When I click on the star at the upper right corner of a city card
+    Then I get a modal asking me if I’m sure that I want to remove the city from the favourites list. If I click Yes, then the city gets immediately removed from favourites. If I click No, then the city stays in the list.
+    Weather information for favourite cities must update every 30 minutes.
 
-In the project directory, you can run:
+Technical requirements
 
-### `npm start`
+The following requirements from the technical lead are not optional. Strive for reliable, maintainable and testable code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Use the free version of the OpenWeatherMap API to get the data you need
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://openweathermap.org/current (If you have trouble getting the list of cities, use this link: http://bulk.openweathermap.org/sample/)
 
-### `npm test`
+    Show how to organize/design CSS (you can use a preprocessor of your own choice)
+    Show hot to organize/design reusable components
+    Use Redux Toolkit for state
+    Use TypeScript because it the right thing to do
+    (Stretch) Implement a caching and request strategy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Final thoughts
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We don’t expect a perfect assignment, but be prepared to talk about what you could have done differently if you had more time. Good luck and we look forward to your solution.
