@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: grey;
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid red;
+}
+
+.card_title {
+  background: white;
+  margin: 0;
+  line-height: 2.6rem;
+}
+
+.card_main {
+  height: 6rem;
+}
+
+.card_data {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+}
+
+.card_data p {
+  width: 4rem;
+}
