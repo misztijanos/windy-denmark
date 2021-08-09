@@ -1,8 +1,8 @@
 import styles from './Card.module.css'
-const Card = () => {
+const Card = ({ city }) => {
   return (
     <div className={styles.card}>
-      <h3 className={styles.card_title}>City Name</h3>
+      <h3 className={styles.card_title}>{city.name}</h3>
       <div className={styles.card_body}>
         <div className={styles.card_main}>
           <i></i>

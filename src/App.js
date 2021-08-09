@@ -1,23 +1,9 @@
 import './App.css'
-import Card from './components/Card'
-
+import Cards from './components/Cards'
 function App() {
   return (
     <div className="App">
-      <div className="cards-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <Cards />
     </div>
   )
 }
