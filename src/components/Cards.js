@@ -4,12 +4,14 @@ import Card from "./Card";
 import Loader from "./Loader";
 import Message from "./Message";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { listCities } from "../actions/actions";
 
 const Cards = () => {
+  const [numCities, setNumCities] = useState(9);
+
   const dispatch = useDispatch();
 
   const cityList = useSelector((state) => state.cityList);
@@ -28,7 +30,13 @@ const Cards = () => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        cities.map((city) => <Card key={city.id} city={city} />)
+        cities.map(
+          (city, index) =>
+            index < numCities && <Card key={city.id} city={city} />
+        )
+      )}
+      {numCities < cities.length && (
+        <button onClick={() => setNumCities(numCities + 9)}>Load more</button>
       )}
     </div>
   );

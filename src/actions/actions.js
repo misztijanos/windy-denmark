@@ -28,6 +28,7 @@ export const addWeather = (city) => async (dispatch) => {
     if (!data) {
       throw Error("couldn't read city weather");
     }
+    data.timestamp = Date.now();
     dispatch({ type: CITY_WEATHER_ADD, payload: data });
   } catch (error) {
     console.log(error);

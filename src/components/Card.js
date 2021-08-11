@@ -7,9 +7,8 @@ const Card = ({ city }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("card.js:");
-    console.log(city);
-    if (!city.weather) {
+    //if no weather data for this city, or the data is older than six hours, bring it in
+    if (!city.weather || (Date.now() - city.timestamp) * 1000 * 60 * 60 > 6) {
       dispatch(addWeather(city));
     }
   }, [dispatch, city]);
