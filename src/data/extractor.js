@@ -1,6 +1,8 @@
 let cities = require('./currentCityList.json')
 const fs = require('fs')
-let danishCities = cities.filter((city) => city.country === 'DK')
+let danishCities = cities
+  .filter((city) => city.country === 'DK')
+  .map(({ name, coord, id }) => ({ name, coord, id }))
 console.log(`Successfully extracted ${danishCities.length} Danish cities`)
 const data = JSON.stringify(danishCities)
 fs.writeFile('danishCities.json', data, (err) => {
